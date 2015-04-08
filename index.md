@@ -1,7 +1,7 @@
 ---
 layout: home
-excerpt: "A minimal Jekyll theme for your blog by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+excerpt: "A blog mostly related to software"
+tags: [Continuous Delivery, Middleware, JBoss, Jenkins, CloudBees, PaaS, Containers]
 image:
   feature: park-2.jpg
 ---
