@@ -2,7 +2,7 @@
 
 title:            Incoherent Thoughts
 locale:           en_US
-url:              
+url:
 
 
 # Jekyll configuration
@@ -29,17 +29,17 @@ owner:
   name: Udaypal Aarkoti
   avatar: bio-photo.jpg
   bio: "Director of Solution Architecture @ CloudBees, part time geek / committer / speaker, Full time Solutions Architect / Dad"
-  email: 
-  disqus-shortname: httpudaypalcom
+  email:
+  disqus-shortname: udaypal
   twitter: udaypal
   facebook: #username
   google:
     plus: #username
-    analytics: 
-    verify: 
-    ad-client: 
-    ad-slot: 
-  bing-verify: 
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
   github: uaarkoti
   stackoverflow: uaarkoti
   linkedin: udaypal

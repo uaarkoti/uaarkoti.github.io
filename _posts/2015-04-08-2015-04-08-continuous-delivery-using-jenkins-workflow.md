@@ -5,6 +5,7 @@ modified: 2015-04-08
 categories:
 excerpt: "Building complex CD pipeline using Jenkins Worflow"
 tags: [Jenkins, Docker, Continuous Delivery]
+comments: true
 image:
   feature:
 date: 2015-02-08T12:29:05-07:00
