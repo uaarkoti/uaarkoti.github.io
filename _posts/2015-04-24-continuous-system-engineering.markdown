@@ -11,7 +11,7 @@ image:
 date: 2015-04-24T20:12:30-07:00
 ---
 <figure>
-	<a href="/images/cd-custom-2.jpg"><img src="/images/jenkins-chef.jpg"></a>
+	<a href="/images/jenkins-chef.jpg"><img src="/images/jenkins-chef.jpg"></a>
 </figure>
 <section id="table-of-contents" class="toc">
   <header>
