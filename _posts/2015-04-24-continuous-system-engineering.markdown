@@ -200,4 +200,12 @@ $ java -jar ./jenkins-cli.jar -s http://localhost:8080/ create-job cookbooks-uni
 $ java -jar ./jenkins-cli.jar -s http://localhost:8080/ create-job cookbooks-integration-tests < jenkins_jobs/cookbooks-integration-tests.config.xml
 {% endhighlight %}
 
-Browse to `http://localhost:8080` and trigger the `cookbooks-link-check` job by clicking on `Build now`
+Browse to `http://localhost:8080` and trigger the `cookbooks-lint-check` job by clicking on `Build now` or wait for 5 minutes for it to trigger automatically. If the `cookbooks-lint-check` is successful you should see it trigger `cookbooks-unit-tests` and that trigger `cookbooks-integration-tests`.
+
+If you prefer to run the [workflow](https://github.com/uaarkoti/chefconf-2015/blob/master/flow.groovy) that contains the end-to-end pipeline you can import the workflow job and trigger the same.
+
+> **NOTE** Make sure you have the latest workflow plugins (`Manage Jenkins -> Manage Plugins -> Update`) before importing / running the workflow job.
+
+{% highlight bash %}
+$ java -jar ./jenkins-cli.jar -s http://localhost:8080/ create-job cookbooks-workflow < jenkins_jobs/cookbooks-workflow.config.xml
+{% endhighlight %}
