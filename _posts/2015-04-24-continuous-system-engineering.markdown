@@ -23,9 +23,10 @@ date: 2015-04-24T20:12:30-07:00
 </div>
 </section><!-- /#table-of-contents -->
 
+<iframe src="//player.vimeo.com/video/127217116" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 ## Configuration Management
-Tools like [Chef](http://chef.io), [Puppet](http://puppetlabs.com), [Ansible](http://ansible.com), [Saltstack](http://saltstack.com) help you streamline configuration management of your infrastructure by letting you describe the state of the
-same as code and enforcing the state in realtime as you commit changes to the code.
+Tools like [Chef](http://chef.io), [Puppet](http://puppetlabs.com), [Ansible](http://ansible.com), [Saltstack](http://saltstack.com) help you streamline configuration management of your infrastructure by letting you describe the state of the same as code and enforcing the state in realtime as you commit changes to the code.
 
 ## Benefits
 Irrespective of the [tool of your choice](http://www.infoworld.com/article/2609482/data-center/data-center-review-puppet-vs-chef-vs-ansible-vs-salt.html) configuration management has [many benefits](http://www.scriptrock.com/blog/5-configuration-management-boss). The focus of this blog though is around your ability to apply the same practices application developers use such as agile development, test driven development and continuous delivery etc... to improve code quality.
@@ -104,7 +105,9 @@ It all starts with writing code and using the right methodologies to support CSE
 - Repeat
 
 ### Different types of testing
-Developers use a variety of [tests](http://en.wikipedia.org/wiki/Software_testing) to ensure the quality of code but for CSE we will use a subset of those.
+Developers use a variety of tests[^1] to ensure the quality of code but for CSE we will use a subset of those.
+
+[^1]: http://en.wikipedia.org/wiki/Software_testing
 
 1. [Static code analysis](https://www.owasp.org/index.php/Static_Code_Analysis) and lint checking
 2. [Unit testing](http://en.wikipedia.org/wiki/Unit_testing)
@@ -112,11 +115,13 @@ Developers use a variety of [tests](http://en.wikipedia.org/wiki/Software_testin
 4. [Smoke testing](http://en.wikipedia.org/wiki/Smoke_testing_(software)) - As applicable
 
 ### Lint Testing
-We will be using [FoodCritic](https://foodcritic.io/) for static code analysis. Foodcritic is a helpful lint tool you can use to check your Chef cookbooks for common problems.
+We will be using FoodCritic[^2] for static code analysis. Foodcritic is a helpful lint tool you can use to check your Chef cookbooks for common problems.
+
+[^2]: https://foodcritic.io/
 
 It comes with 47 built-in rules that identify problems ranging from simple style inconsistencies to difficult to diagnose issues that will hurt in production.
 
-Here is a way to run foodcritic and publish the results to jenkins
+Here is a way to run FoodCritic and publish the results to jenkins
 
 {% highlight bash %}
 if [[ ! -d chef-ci-tools ]]; then
@@ -130,7 +135,9 @@ bash chef-ci-tools/bin/chef-foodcritic-publisher.sh -X spec -f any -t "~FC003"
 
 ### Unit Testing
 
-We will be using [ChefSpec](https://docs.chef.io/chefspec.html) for unit testing.
+We will be using ChefSpec[^3] for unit testing.
+
+[^3]: https://docs.chef.io/chefspec.html
 
 Use ChefSpec to simulate the convergence of resources on a node:
 
