@@ -3,7 +3,7 @@ layout: post
 title: Breaking Builds ... NOT!
 modified:
 categories:
-excerpt: "Improve your developer productivity by eliminating the fear of breaking builds"
+excerpt: "Improving developer productivity by eliminating the fear of breaking builds"
 tags: [Jenkins, CD, Best Practices, CloudBees]
 comments: true
 image:
