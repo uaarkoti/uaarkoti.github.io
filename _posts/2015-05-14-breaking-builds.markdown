@@ -53,12 +53,16 @@ I believe developers shouldn't have to worry about breaking builds. It is not pr
 
 ### Meet Validated Merge[^2]
 
-Validated Merge lets developer commit their changes to an intermediate, magical, repository (Jenkins) that triggers a build on Jenkins that will build / test the build and only when successful commits to the upstream repository. If the build fail for whatever reason, the commit is not pushed to the upstream. That way the chance of a checkin causing a failure upstream goes down significantly.
+[Validated Merge](https://jenkins-enterprise.cloudbees.com/docs/user-guide-14.5/validated-merge.html) lets developer commit their changes to an intermediate, magical, repository (Jenkins) that triggers a build on Jenkins that will build / test the build and only when successful commits to the upstream repository. If the build fail for whatever reason, the commit is not pushed to the upstream. That way the chance of a checkin causing a failure upstream goes down significantly.
 
 This doesn't not eliminate broken builds completely but reduces them significantly such that developers don't feel intimidated to checkin code changes often for the fear of breaking builds.
 
+> NOTE: [Validated Merge](https://jenkins-enterprise.cloudbees.com/docs/user-guide-14.5/validated-merge.html) is part of Jenkins Enterprise By CloudBees
 
-> NOTE: Validated Merge is part of Jenkins Enterprise By CloudBees
+## Conclusion
+Cost of development is constantly going up[^3]. Encouraging developers to focus on writing software while automating testing and providing fast feedback eliminates unplanned work [^4]. Validated Merge eliminates one such unplanned work in your SDLC.
 
 [^1]: http://www.martinfowler.com/ieeeSoftware/failFast.pdf
 [^2]: https://www.cloudbees.com/products/jenkins-enterprise/plugins/validated-merge-plugin
+[^3]: http://www.cnbc.com/id/101677461
+[^4]: http://www.computerworld.com/article/2563263/it-management/unplanned-work-is-silently-killing-it-departments.html
