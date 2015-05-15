@@ -13,22 +13,13 @@ date: 2015-05-14T08:17:37-07:00
 <figure>
 	<a href="/images/breaking_builds.jpg"><img src="/images/breaking_builds.jpg"></a>
 </figure>
-<section id="table-of-contents" class="toc">
-  <header>
-    <h3>Overview</h3>
-  </header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section><!-- /#table-of-contents -->
 
 <iframe src="//player.vimeo.com/video/127904217" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Scenario
 You are working on a new feature that some high profile prospects are waiting for and you have a code freeze by the end of day. This is a highly advertised feature for the next release and you worked really hard on it for weeks. This is the last mile and you have a much deserved week long vacation coming up. You do your due diligence to test your changes regularly locally and everything seems good. You do one last test run and everything looks good. You checkin the code. You pack-up your bags and can almost smell the beach, the turquoise water and a cold beer in your hands.
 
-You land and switch on the phone. You see 26 text messages starting with casual "where are you?" with the last one with some expletive words from your manager.
+You land and switch on the phone. You see 26 text messages starting with casual "where are you?" and with the last one with some expletive words from your manager.
 
 ## Broken builds
 The scenario described above might sound like an exaggeration but it happens quite often.
