@@ -60,7 +60,7 @@ This doesn't not eliminate broken builds completely but reduces them significant
 > NOTE: [Validated Merge](https://jenkins-enterprise.cloudbees.com/docs/user-guide-14.5/validated-merge.html) is part of Jenkins Enterprise By CloudBees
 
 ## Conclusion
-Cost of development is constantly going up[^3]. Encouraging developers to focus on writing software while automating testing and providing fast feedback eliminates unplanned work [^4]. Validated Merge eliminates one such unplanned work in your SDLC.
+Cost of development is constantly going up[^3]. Encouraging developers to focus on writing software while automating testing and providing fast feedback eliminates unplanned work [^4]. Validated Merge eliminates one such unplanned work in your SDLC thus improving developer Productivity.
 
 [^1]: http://www.martinfowler.com/ieeeSoftware/failFast.pdf
 [^2]: https://www.cloudbees.com/products/jenkins-enterprise/plugins/validated-merge-plugin
