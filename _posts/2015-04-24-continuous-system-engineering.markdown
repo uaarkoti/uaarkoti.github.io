@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Continuous Systems Engineering (CSE)
+title: Continuous Systems Engineering
 modified:
 categories:
 excerpt: "Continuous Delivery of your Infrastructure As Code"
