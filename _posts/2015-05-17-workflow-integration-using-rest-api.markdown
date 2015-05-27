@@ -23,7 +23,7 @@ date: 2015-05-17T19:57:59-07:00
 </div>
 </section><!-- /#table-of-contents -->
 
-## Workflow Integration
+## Jenkins Workflow Integration
 [Jenkins Workflow](https://wiki.jenkins-ci.org/display/JENKINS/Workflow+Plugin) allows developers to do end-to-end automation of their applications all the way from build (triggered by a code commit by a developer) to deployment into production.
 
 End-to-end automation could involve both manual and automated tests/tasks. Jenkins Workflow supports both. Manual tasks are supported through [input step](https://github.com/jenkinsci/workflow-plugin/blob/master/TUTORIAL.md#pausing-flyweight-vs-heavyweight-executors) while there are over 1000+ plugins to support other types of automation and integration with other tools.
@@ -40,7 +40,7 @@ In this article, you will see how to leverage the RESTful API's to integrate Jen
 http://<username>:<api-token>@<hostname>:<port>/<prefix>/job/<job-name>/<build-number>/input/<input-step-id>/<action>
 
 username      - When security is enabled on Jenkins, the username you want to use to authenticate
-api-token     - Can be obtained from `http://<hostname>:<port>/<prefix>/user/<username>/configure`
+api-token     - Can be obtained from http://<hostname>:<port>/<prefix>/user/<username>/configure
 hostname      - Host where Jenkins is running
 port          - Port where Jenkins is running (default : 8080)
 job-name      - Name of your workflow job
