@@ -23,18 +23,16 @@ date: 2015-05-17T19:57:59-07:00
 </div>
 </section><!-- /#table-of-contents -->
 
-## Jenkins Workflow Integration
-[Jenkins Workflow](https://wiki.jenkins-ci.org/display/JENKINS/Workflow+Plugin) allows developers to do end-to-end automation of their applications all the way from build (triggered by a code commit by a developer) to deployment into production.
+## Jenkins Workflow REST Integration
+[Jenkins Workflow](https://wiki.jenkins-ci.org/display/JENKINS/Workflow+Plugin) allows developers to do end-to-end automation of their applications all the way from build, triggered by a code commit from a developer, to deployment into production.
 
 End-to-end automation could involve both manual and automated tests/tasks. Jenkins Workflow supports both. Manual tasks are supported through [input step](https://github.com/jenkinsci/workflow-plugin/blob/master/TUTORIAL.md#pausing-flyweight-vs-heavyweight-executors) while there are over 1000+ plugins to support other types of automation and integration with other tools.
 
 When a workflow reaches the `input` step, it pauses for input. To continue, the responsible owner needs to login and resume the workflow while providing necessary data, as defined in the `input` step. This can be done through Jenkins UI or from an external application as Jenkins Workflow exposes RESTful API's for the same.
 
-In this article, you will see how to leverage the RESTful API's to integrate Jenkins Workflow in your environment.
+In this article, you will see how to leverage the [RESTful API's](https://wiki.jenkins-ci.org/display/JENKINS/Remote+access+API) to integrate Jenkins Workflow in your environment.
 
-### Setup
-
-#### RESTful URL Format
+### RESTful URL Format
 
 {% highlight bash %}
 http://<username>:<api-token>@<hostname>:<port>/<prefix>/job/<job-name>/<build-number>/input/<input-step-id>/<action>
@@ -43,6 +41,7 @@ username      - When security is enabled on Jenkins, the username you want to us
 api-token     - Can be obtained from http://<hostname>:<port>/<prefix>/user/<username>/configure
 hostname      - Host where Jenkins is running
 port          - Port where Jenkins is running (default : 8080)
+prefix        - Context Path set using --prefix when starting Jenkins
 job-name      - Name of your workflow job
 build-number  - The build number of the workflow job
 input-step-id - The id attribute you provided to your input step. If the 'id' attribute is not provided, Jenkins will create a random id.
@@ -121,3 +120,8 @@ To access the demo navigate to `http://<docker-host-ip>:8080` and build any of t
 As described above, Jenkins Workflow makes it very easy to integrate with external application by exposing workflow job itself as well as manual steps as RESTful endpoints.
 
 While we used `curl` command throughout this example, one should be able to use the same RESTful API's used by the `curl` command to achieve the same level of integration from any application.
+
+### What's Next?
+- Workflow + Webapp integration
+- Workflow + Checkpoints
+- Workflow + Docker
