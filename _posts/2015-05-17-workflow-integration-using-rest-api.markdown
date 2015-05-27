@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Workflow Integration"
+title: "Jenkins Workflow Integration"
 modified:
 categories:
 excerpt: "Integration Jenkins Workflow with external applications"
