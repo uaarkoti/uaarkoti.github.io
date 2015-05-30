@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Jenkins Workflow Integration"
+title: "Jenkins Workflow RESTFul API's"
 modified:
 categories:
-excerpt: "Integrate Jenkins Workflow with external applications or CLI"
+excerpt: "Leverage the RESTFul API's to integrate Jenkins Workflow in your environment"
 tags: [Jenkins, Workflow, CD, Integration]
 comments: true
 image:
