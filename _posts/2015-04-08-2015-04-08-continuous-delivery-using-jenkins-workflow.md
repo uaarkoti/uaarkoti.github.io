@@ -13,6 +13,15 @@ date: 2015-02-08T12:29:05-07:00
 <figure>
 	<a href="/images/cd-custom-2.jpg"><img src="/images/cd-custom-2.jpg"></a>
 </figure>
+<section id="table-of-contents" class="toc">
+  <header>
+    <h3>Overview</h3>
+  </header>
+<div id="drawer" markdown="1">
+*  Auto generated table of contents
+{:toc}
+</div>
+</section><!-- /#table-of-contents -->
 
 ## Continuous Integration
 Cruise Control, Hudson, Jenkins ... if you are familiar with any of those names as it relates to [Continuous Integration](http://en.wikipedia.org/wiki/Continuous_integration) then you know that developers have been trying to automate their builds for over a decade now. For the most part, developers have been successful in building basic automation and are now trying to push it further beyond development environments. That typically means automating their unit, regression, functional, integration testing and potentially promoting/deploying to higher environments and eventually pushing code to production in an automated way.
