@@ -74,4 +74,4 @@ While all of these plugins have been used to varying degree of success, each hav
 {% gist uaarkoti/277802a6ee29b18debaa %}
 
 ## Next
-In following blog post, I'll share more on how you can get started with Jenkins Workflow
+In following [blog post](http://udaypal.com/jenkins-workflow-getting-started/), I'll share more on how you can get started with Jenkins Workflow
