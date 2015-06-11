@@ -24,6 +24,7 @@ date: 2015-05-17T19:57:59-07:00
 </section><!-- /#table-of-contents -->
 
 ## Jenkins Workflow REST Integration
+
 [Jenkins Workflow](https://wiki.jenkins-ci.org/display/JENKINS/Workflow+Plugin) allows developers to do end-to-end automation of their applications all the way from build, triggered by a code commit from a developer, to deployment into production.
 
 End-to-end automation could involve both manual and automated tests/tasks. Jenkins Workflow supports both. Manual tasks are supported through [input step](https://github.com/jenkinsci/workflow-plugin/blob/master/TUTORIAL.md#pausing-flyweight-vs-heavyweight-executors) while there are over [1000+ plugins](https://updates.jenkins-ci.org/download/plugins/) to support other types of automation and integration with other tools.
@@ -55,6 +56,7 @@ action        - The value of action changes depending on whether its an empty or
 username/api-token is required only if Jenkins instance is secured (which is recommended).
 
 ### Triggering
+
 When you add an `input` step to the workflow, you can require the user to provide additional information to continue (or not). There are a variety of parameters you can request from the user like `string`, `choice`, `password`, `file` etc....
 
 The following input requires `comments` from the user which is of type `string`
@@ -70,6 +72,7 @@ input id: 'ApproveDeployment', message: 'Please approve'
 {% endhighlight %}
 
 #### No input required
+
 In this scenario we are going assume that no additional data is required to resume the workflow.
 
 - To Proceed
@@ -85,9 +88,10 @@ curl -X POST http://192.168.59.103:8080/job/workflow-integration-noinput/1/input
 {% endhighlight %}
 
 #### Input required
+
 In this scenario, the workflow requires input from the user to continue. Once the user provides the data, it is passed to the InputStep as a combination of key/value pairs and JSON object as shown below.
 
-{% highlight http %}
+{% highlight json %}
 json:{"parameter": {"name": "comments", "value": "Approved"}}
 proceed:Approve
 {% endhighlight %}
@@ -105,6 +109,7 @@ curl -X POST http://192.168.59.103:8080/job/workflow-integration/1/input/Approve
 {% endhighlight %}
 
 ### Demo
+
 For convenience, this entire demo is captured in a docker container so you can see the API's in action.
 
 To run the demo, you'll need [docker installed](https://docs.docker.com/installation/).
@@ -117,11 +122,13 @@ To access the demo navigate to `http://<docker-host-ip>:8080` and build any of t
 
 
 ### Conclusion
+
 As described above, Jenkins Workflow makes it very easy to integrate with external application by exposing workflow job itself as well as manual steps as RESTful endpoints.
 
 While we used `curl` command throughout this example, one should be able to use the same RESTful API's used by the `curl` command to achieve the same level of integration from any application.
 
 ### What's Next?
+
 - Workflow + Webapp integration
 - Workflow + Checkpoints
 - Workflow + Docker
