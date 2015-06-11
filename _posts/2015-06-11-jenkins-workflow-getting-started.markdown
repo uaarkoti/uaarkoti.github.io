@@ -26,7 +26,7 @@ In a previous [post](http://udaypal.com/2015-04-08-continuous-delivery-using-jen
 
 ## Getting started
 
-In this example you'll see how to build, test and deploy a simple java web application to Tomcat server. To simulate a real world use, you'll see how to deploy/promote the application to different environments before pushing it to production.
+In this example[^1] you'll see how to build, test and deploy a simple java web application to Tomcat server. To simulate a real world use, you'll see how to deploy/promote the application to different environments before pushing it to production.
 
 Hopefully this will serve as a template for anyone looking to getting started with Jenkins Workflow and can help build on it.
 
@@ -195,3 +195,5 @@ Hopefully this gave you a good idea of how to create a Workflow and implement co
 ## Conclusion
 
 Continuous Delivery is not an easy task but with Jenkins Workflow, you can manage the complexity through use a full blown object oriented programming language. Features like Global shared libraries will help centralize and abstract functionality hiding complexity from developers while encouraging code reuse and best practices.
+
+[^1]: https://github.com/uaarkoti/jenkins-workflow-getting-started
