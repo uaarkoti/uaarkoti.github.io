@@ -19,15 +19,13 @@ date: 2015-06-11T00:39:29-07:00
 </div>
 </section><!-- /#table-of-contents -->
 
-In my previous [blog](http://udaypal.com/2015-04-08-continuous-delivery-using-jenkins-workflow/) I covered continuous Delivery using Jenkins Workflow. This is a followup post to that to show how you can get started and build a CD pipleline using Jenkins Workflow.
+In a previous [post](http://udaypal.com/2015-04-08-continuous-delivery-using-jenkins-workflow/) I covered Continuous Delivery (CD) using Jenkins Workflow. This is a followup to show how to get started and build a CD pipleline using Jenkins Workflow.
 
 ## Getting started
 
-This is a sample workflow show casing some of the powerful concepts of Jenkins Workflow in implementing a CD pipeline.
+In this example you'll see how to build, test and deploy a simple java web application. To simulate a real world use, you'll see how to deploy the application to different environments before pushing it to production.
 
-In this example you'll see how to take a simple Java Web Application and deploy it to production in an automated fashion.
-
-My hope is that this will serve as a template for anyone getting started with Jenkins Workflow and can help build on it.
+Hopefully this will serve as a template for anyone looking to getting started with Jenkins Workflow and can help build on it.
 
 ### Requirements
 
@@ -46,7 +44,7 @@ My hope is that this will serve as a template for anyone getting started with Je
 
 ### Setup Tomcat
 
-- Make sure Tomcat runs on a [different port](http://www.mkyong.com/tomcat/how-to-change-tomcat-default-port/) than Jenkins. Their default ports are 8080. In my example, Jenkins is setup to run on port 8080 while Tomcat is setup to run on 8180.
+- **Change Default Port** - Make sure Tomcat runs on a [different port](http://www.mkyong.com/tomcat/how-to-change-tomcat-default-port/) than Jenkins. In my example setup, Jenkins is setup to run on port 8080 while Tomcat is setup to run on 8180 on localhost.
 
 Here is a code snippet of the two lines of `$CATALINA_HOME/conf/server.xml` that need to be modified
 {% highlight xml %}
@@ -56,7 +54,7 @@ Here is a code snippet of the two lines of `$CATALINA_HOME/conf/server.xml` that
 <Connector port="8109" protocol="AJP/1.3" redirectPort="8443" />
 {% endhighlight %}
 
-- Tomcat users `$CATALINA_HOME/conf/tomcat-users.xml` file should have `admin` user with roles `admin` and `manager`
+- **Manage Users** - Tomcat users `$CATALINA_HOME/conf/tomcat-users.xml` file should have `admin` user with roles `admin` and `manager`
 
 {% highlight xml %}
 <?xml version='1.0' encoding='utf-8'?>
