@@ -152,7 +152,7 @@ At this point you should see a job named "webapp-workflow" on your Jenkins Maste
 
 Go ahead and try the staging and production URL's to make sure the application is not deployed there.
 
-**NOTE** If you are using Docker demo container, the URL's to access the application might be different
+>> **NOTE** If you are using Docker demo container, the URL's to access the application might be different
 {: .notice}
 
 This is it - Time to see CD in action. Go ahead and build the job by clicking on "Build Now". If everything goes well, the workflow will pause for input shortly. At this point, go ahead and verify the application is actually deployed to staging @ `http://localhost:8080/staging`
@@ -163,11 +163,11 @@ For reference, the [console logs](https://gist.github.com/uaarkoti/2fe83745d361a
 
 ### What can you do next?
 
-Go ahead and make changes to the job definition, or to the groovy script. If you make changes to groovy, be sure to commit/push your changes to Global git repo for your changes to be visible to the job.
+Go ahead and make changes to the job definition, or to the [groovy script](https://raw.githubusercontent.com/uaarkoti/cd-workflow-global/master/src/com/cb/web/Tomcat.groovy). If you make changes to groovy, be sure to commit/push your changes to the `workflowLibs` git repo for your changes to be visible to the job.
 
-You could try and move the job definition to an SCM (like github) and use the `Groovy CPS DSL from SCM` option to execute the script. The benefit of this approach is that you can make changes to your job definition without access Jenkins while also keeping the version history of the job.
+You could try and move the job definition to an SCM (like github) and use the `Groovy CPS DSL from SCM` option to execute the script. The benefit of this approach is that you can make changes to your job definition without accessing Jenkins while also keeping the version history of the job.
 
-If you want to be more adventurous use the `Snippet Generator` from the job config page to learn about other Workflow commands and make use of them. For example, setup security in Jenkins to make sure only certain users can approve code promotion to `production`.
+If you want to be more adventurous use the `Snippet Generator` from the job config page to learn about other Workflow commands and make use of them. For example, setup security in Jenkins to make sure only certain users can approve code promotion to `production`. HINT: `input` step takes a role.
 
 You can also try and restart your Jenkins instance while the workflow is running and see the behavior once Jenkins is backup and running.
 
@@ -181,7 +181,7 @@ docker run -p 8080:8080 -p 8180:8180 -it uday/workflow-getting-started
 
 ## Summary
 
-Hopefully this gave you a good idea of how to create a Workflow and implement continuous delivery using Jenkins Workflow. The features that were highlighted in this sample are
+Hopefully this gave you a good idea of how to create a Workflow and implement continuous delivery using Jenkins Workflow. The features that were highlighted in this example are
 
 1. Global shared libraries for code reuse
 2. Human interaction
