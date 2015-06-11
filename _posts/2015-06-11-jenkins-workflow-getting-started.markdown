@@ -37,6 +37,7 @@ Hopefully this will serve as a template for anyone looking to getting started wi
 3. Tomcat 6.0.43+
 4. Git client latest (1.9.5+)
 5. Maven 3.2+
+6. Docker (optional)
 
 ### Installation
 
@@ -71,9 +72,11 @@ Here is a code snippet of the two lines of `$CATALINA_HOME/conf/server.xml` that
 </tomcat-users>
 {% endhighlight %}
 
+- **Start Tomcat** -
+
 ### Setup Jenkins
 
-- **Update plugins** - Make sure you have the latest Workflow plugins by going to Manage Jenkins --> Manage Plugins -> Updates and selecting and `Workflow` related updates. Restart Jenkins after the updates are complete. As of this writing the latest version is 1.6
+- **Update plugins** - Make sure you have the latest Workflow plugins by going to Manage Jenkins --> Manage Plugins -> Updates and selecting any `Workflow` related updates. Restart Jenkins after the updates are complete. As of this writing the latest version is 1.6
 - **Global libraries Repo** - Jenkins exposes a Git repository for hosting global libraries meant to be reused across multiple CD pipelines managed on the Master. We will setup this repository so you can build on it to create your own custom libraries. If this is a fresh Jenkins Install and you haven't setup this git repository, follow these instructions to setup.
 
 >> Before proceeding to the next steps, make sure your Jenkins instance is running
@@ -137,14 +140,24 @@ This is the actual groovy script of the workflow
 
 - **Edit Job**
 
-The above instructions should have created a job by name `webapp-workflow` on the Jenkins Master. Edit the job and make sure that the first line `tomcat = new com.cb.web.Tomcat(hostname: "localhost", port: "8180", adminUser: "admin", adminPassword: "tomcat")` reflects the correct information about your tomcat instance.
+The above instructions should have created a job by name `webapp-workflow` on the Jenkins Master. Edit the job and make sure that the first line reflects the correct information about your tomcat instance.
+
+{% highlight java %}
+`tomcat = new com.cb.web.Tomcat(hostname: "localhost", port: "8180", adminUser: "admin", adminPassword: "tomcat")`
+{% endhighlight %}
 
 - **Run Job**
-  - At this point you should see a job named "webapp-workflow" on your Jenkins Master.
-  - The whole point of this excerise is to see application deployed to production if everything goes well. To simulate that, this job, if run successfully should deploy a sample web applicaiton to staging first (simulated @ `http://localhost:8080/staging`) and when the changes are approved will result in deployment to production (simulated @ `http://localhost:8080/production`).
-  - Go ahead and try the staging and production URL's to make sure the application is not deployed there.
-  - This is it - Time to see CD in action - Go ahead and build the job by clicking on "Build Now". If everything goes well, the workflow will pause for input shortly. At this point, go ahead and verify the application is actually deployed to staging @ `http://localhost:8080/staging`
-  - Click on the `Proceed` or `Abort` button to complete the execution. If you did click on `Proceed` you should be able to see that the application is how deployed to `http://localhost:8080/production`
+
+At this point you should see a job named "webapp-workflow" on your Jenkins Master. The whole point of this excerise is to see application deployed to production if everything goes well. To simulate that, this job, if run successfully should deploy a sample web applicaiton to staging first (simulated @ `http://localhost:8080/staging`) and when the changes are approved will result in deployment to production (simulated @ `http://localhost:8080/production`).
+
+Go ahead and try the staging and production URL's to make sure the application is not deployed there.
+
+**NOTE** If you are using Docker demo container, the URL's to access the application might be different
+{: .notice}
+
+This is it - Time to see CD in action. Go ahead and build the job by clicking on "Build Now". If everything goes well, the workflow will pause for input shortly. At this point, go ahead and verify the application is actually deployed to staging @ `http://localhost:8080/staging`
+
+Click on the `Proceed` or `Abort` button to complete the execution. If you did click on `Proceed` you should be able to see that the application is how deployed to `http://localhost:8080/production`
 
 For reference, the [console logs](https://gist.github.com/uaarkoti/2fe83745d361a261a387) for the execution of this workflow.
 
