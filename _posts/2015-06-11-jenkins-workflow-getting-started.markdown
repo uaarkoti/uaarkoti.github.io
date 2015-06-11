@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jenkins Workflow Getting Started"
+title: "Jenkins Workflow - Getting Started"
 modified:
 categories:
 excerpt: "Building a sample end-to-end CD pipeline using Jenkins Workflow"
@@ -22,11 +22,11 @@ date: 2015-06-11T00:39:29-07:00
 </div>
 </section><!-- /#table-of-contents -->
 
-In a previous [post](http://udaypal.com/2015-04-08-continuous-delivery-using-jenkins-workflow/) I covered Continuous Delivery (CD) using Jenkins Workflow. This is a followup to show how to get started and build a CD pipleline using Jenkins Workflow.
+In a previous [post](http://udaypal.com/2015-04-08-continuous-delivery-using-jenkins-workflow/) I covered Continuous Delivery (CD) using Jenkins Workflow. This is a followup to show how to get started and build a CD pipleline using [Jenkins Workflow](https://wiki.jenkins-ci.org/display/JENKINS/Workflow+Plugin).
 
 ## Getting started
 
-In this example you'll see how to build, test and deploy a simple java web application. To simulate a real world use, you'll see how to deploy the application to different environments before pushing it to production.
+In this example you'll see how to build, test and deploy a simple java web application to Tomcat server. To simulate a real world use, you'll see how to deploy/promote the application to different environments before pushing it to production.
 
 Hopefully this will serve as a template for anyone looking to getting started with Jenkins Workflow and can help build on it.
 
@@ -72,7 +72,7 @@ Here is a code snippet of the two lines of `$CATALINA_HOME/conf/server.xml` that
 </tomcat-users>
 {% endhighlight %}
 
-- **Start Tomcat** -
+- **Start Tomcat** - [Setup](https://tomcat.apache.org/tomcat-4.1-doc/RUNNING.txt)
 
 ### Setup Jenkins
 
@@ -102,8 +102,8 @@ Lets seed the empty repository with some groovy libraries
 cd workflowLibs
 git checkout -b master
 mkdir -p src/com/cb/{web,util}
-wget -O src/com/cb/web/Tomcat.groovy https://raw.githubusercontent.com/uaarkoti/cd-workflow-global/master/src/com/cb/web/Tomcat.groovy
-wget -O src/com/cb/util/BasicUtilities.groovy https://raw.githubusercontent.com/uaarkoti/cd-workflow-global/master/src/com/cb/util/BasicUtilities.groovy
+wget -O src/com/cb/web/Tomcat.groovy https://raw.githubusercontent.com/uaarkoti/jenkins-workflow-getting-started/master/src/com/cb/web/Tomcat.groovy
+wget -O src/com/cb/util/BasicUtilities.groovy https://raw.githubusercontent.com/uaarkoti/jenkins-workflow-getting-started/master/src/com/cb/util/BasicUtilities.groovy
 git add .
 git commit -am "Added web and util scripts"
 git push --set-upstream origin master
@@ -130,7 +130,7 @@ Branch master set up to track remote branch master from origin.
 
 {% highlight bash %}
 wget -O /tmp/jenkins-cli.jar http://localhost:8080/jnlpJars/jenkins-cli.jar
-wget -O /tmp/config.xml https://raw.githubusercontent.com/uaarkoti/cd-workflow-global/master/jobs/web-app-cd.xml
+wget -O /tmp/config.xml https://raw.githubusercontent.com/uaarkoti/jenkins-workflow-getting-started/master/jobs/web-app-cd.xml
 java -jar /tmp/jenkins-cli.jar -s http://localhost:8080 create-job
 java -jar /tmp/jenkins-cli.jar -s http://localhost:8081 create-job webapp-workflow < /tmp/config.xml
 {% endhighlight %}
@@ -163,7 +163,7 @@ For reference, the [console logs](https://gist.github.com/uaarkoti/2fe83745d361a
 
 ### What can you do next?
 
-Go ahead and make changes to the job definition, or to the [groovy script](https://raw.githubusercontent.com/uaarkoti/cd-workflow-global/master/src/com/cb/web/Tomcat.groovy). If you make changes to groovy, be sure to commit/push your changes to the `workflowLibs` git repo for your changes to be visible to the job.
+Go ahead and make changes to the job definition, or to the [groovy script](https://raw.githubusercontent.com/uaarkoti/jenkins-workflow-getting-started/master/src/com/cb/web/Tomcat.groovy). If you make changes to groovy, be sure to commit/push your changes to the `workflowLibs` git repo for your changes to be visible to the job.
 
 You could try and move the job definition to an SCM (like github) and use the `Groovy CPS DSL from SCM` option to execute the script. The benefit of this approach is that you can make changes to your job definition without accessing Jenkins while also keeping the version history of the job.
 
