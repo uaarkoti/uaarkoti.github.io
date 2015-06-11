@@ -9,6 +9,9 @@ image:
   feature:
 date: 2015-06-11T00:39:29-07:00
 ---
+<figure>
+	<a href="/images/workflow-large.png"><img src="/images/workflow-large.png"></a>
+</figure>
 <section id="table-of-contents" class="toc">
   <header>
     <h3>Overview</h3>
@@ -155,9 +158,9 @@ If you want to be more adventurous use the `Snippet Generator` from the job conf
 
 You can also try and restart your Jenkins instance while the workflow is running and see the behavior once Jenkins is backup and running.
 
-### Docker Container
+## Docker Contained Demo
 
-For those that simply want to play with the demo, I created a docker container that contains the entire implementation. To run 
+For those that simply want to play with the demo, I created a docker container that contains the entire implementation. To run
 
 {% highlight bash %}
 docker run -p 8080:8080 -p 8180:8180 -it uday/workflow-getting-started
