@@ -129,6 +129,9 @@ java -jar /tmp/jenkins-cli.jar -s http://localhost:8080 create-job
 java -jar /tmp/jenkins-cli.jar -s http://localhost:8081 create-job webapp-workflow < /tmp/config.xml
 {% endhighlight %}
 
+This is the actual groovy script of the workflow
+{% gist uaarkoti/fe688bdbefa0e8594990 %}
+
 - **Edit Job**
 
 The above instructions should have created a job by name `webapp-workflow` on the Jenkins Master. Edit the job and make sure that the first line `tomcat = new com.cb.web.Tomcat(hostname: "localhost", port: "8180", adminUser: "admin", adminPassword: "tomcat")` reflects the correct information about your tomcat instance.
@@ -151,6 +154,14 @@ You could try and move the job definition to an SCM (like github) and use the `G
 If you want to be more adventurous use the `Snippet Generator` from the job config page to learn about other Workflow commands and make use of them. For example, setup security in Jenkins to make sure only certain users can approve code promotion to `production`.
 
 You can also try and restart your Jenkins instance while the workflow is running and see the behavior once Jenkins is backup and running.
+
+### Docker Container
+
+For those that simply want to play with the demo, I created a docker container that contains the entire implementation. To run 
+
+{% highlight bash %}
+docker run -p 8080:8080 -p 8180:8180 -it uday/workflow-getting-started
+{% endhighlight %}
 
 ## Summary
 
