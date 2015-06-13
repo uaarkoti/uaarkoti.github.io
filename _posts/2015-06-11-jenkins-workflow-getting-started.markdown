@@ -26,7 +26,7 @@ In a previous [post](http://udaypal.com/2015-04-08-continuous-delivery-using-jen
 
 ## Getting started
 
-In this example[^1] you'll see how to build, test and deploy a simple java web application to Tomcat server. To simulate a real world use, you'll see how to deploy/promote the application to different environments before pushing it to production.
+In this example[^1] you'll see how to build, test and deploy a simple java web application to Tomcat server. To simulate a real world scenario, you'll see how to deploy/promote the application to different environments before pushing it to production.
 
 Hopefully this will serve as a template for anyone looking to getting started with Jenkins Workflow and can help build on it.
 
