@@ -87,7 +87,7 @@ curl -X POST http://192.168.59.103:8080/job/workflow-integration-noinput/1/input
 #### Input required
 In this scenario, the workflow requires input from the user to continue. Once the user provides the data, it is passed to the InputStep as a combination of key/value pairs and JSON object as shown below.
 
-{% highlight %}
+{% highlight bash %}
 json:{"parameter": {"name": "comments", "value": "Approved"}}
 proceed:Approve
 {% endhighlight %}
