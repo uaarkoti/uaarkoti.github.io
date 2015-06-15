@@ -79,7 +79,8 @@ Here is a code snippet of the two lines of `$CATALINA_HOME/conf/server.xml` that
 - **Update plugins** - Make sure you have the latest Workflow plugins by going to Manage Jenkins --> Manage Plugins -> Updates and selecting any `Workflow` related updates. Restart Jenkins after the updates are complete. As of this writing the latest version is 1.6
 - **Global libraries Repo** - Jenkins exposes a Git repository for hosting global libraries meant to be reused across multiple CD pipelines managed on the Master. We will setup this repository so you can build on it to create your own custom libraries. If this is a fresh Jenkins Install and you haven't setup this git repository, follow these instructions to setup.
 
->> Before proceeding to the next steps, make sure your Jenkins instance is running
+Before proceeding to the next steps, make sure your Jenkins instance is running
+{: .notice}
 
 
 {% highlight bash %}
@@ -123,7 +124,7 @@ To http://localhost:8080/workflowLibs.git
 Branch master set up to track remote branch master from origin.
 {% endhighlight %}
 
-**NOTE** - In future, if you make any changes to the global libraries, simply commit and push them to the above git repository to be able to use them in your workflow.
+In future, if you make any changes to the global libraries, simply commit and push them to the above git repository to be able to use them in your workflow.
 {: .notice}
 
 - **Import Job**
@@ -152,14 +153,14 @@ At this point you should see a job named "webapp-workflow" on your Jenkins Maste
 
 Go ahead and try the staging and production URL's to make sure the application is not deployed there.
 
->> **NOTE** If you are using Docker demo container, the URL's to access the application might be different
-{: .notice}
-
 This is it - Time to see CD in action. Go ahead and build the job by clicking on "Build Now". If everything goes well, the workflow will pause for input shortly. At this point, go ahead and verify the application is actually deployed to staging @ `http://localhost:8080/staging`
 
 Click on the `Proceed` or `Abort` button to complete the execution. If you did click on `Proceed` you should be able to see that the application is how deployed to `http://localhost:8080/production`
 
 For reference, the [console logs](https://gist.github.com/uaarkoti/2fe83745d361a261a387) for the execution of this workflow.
+
+If you are using Docker demo container, the URL's to access the application might be different. For ex: On my mac the URL might be something like `http://192.168.59.103:8080/staging` instead of `http://localhost:8080/staging`
+{: .notice}
 
 ### What can you do next?
 

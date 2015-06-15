@@ -101,7 +101,49 @@ figcaption {
 	background-color: $body-color;
 	border: 1px solid darken($body-color,20);
 	@include rounded(3px);
+	font-family: $base-font, FontAwesome;
 }
+
+.notice:before {
+	content: "\f05a \00a0 Note - ";
+	font-weight: bold;
+	color:green;
+}
+
+.notice_warn {
+	margin-top: 1.5em;
+	padding: .5em 1em;
+	text-indent: 0;
+	@include font-rem(14);
+	background-color: $body-color;
+	border: 1px solid darken($body-color,20);
+	@include rounded(3px);
+	font-family: $base-font, FontAwesome;
+}
+
+.notice_warn:before {
+	content: "\f06a \00a0 Warning - ";
+	font-weight: bold;
+	color:red;
+}
+
+.notice_important {
+	margin-top: 1.5em;
+	padding: .5em 1em;
+	text-indent: 0;
+	@include font-rem(14);
+	background-color: $body-color;
+	border: 1px solid darken($body-color,20);
+	@include rounded(3px);
+	font-family: $base-font, FontAwesome;
+}
+
+.notice_important:before {
+	content: "\f005 \00a0 Important - ";
+	font-weight: bold;
+	color:orange;
+}
+
 
 /*
    Blockquotes
