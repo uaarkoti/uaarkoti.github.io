@@ -144,7 +144,7 @@ This is the actual groovy script of the workflow
 The above instructions should have created a job by name `webapp-workflow` on the Jenkins Master. Edit the job and make sure that the first line reflects the correct information about your tomcat instance.
 
 {% highlight java %}
-`tomcat = new com.cb.web.Tomcat(hostname: "localhost", port: "8180", adminUser: "admin", adminPassword: "tomcat")`
+tomcat = new com.cb.web.Tomcat(hostname: "localhost", port: "8180", adminUser: "admin", adminPassword: "tomcat")
 {% endhighlight %}
 
 - **Run Job**
@@ -159,7 +159,7 @@ Click on the `Proceed` or `Abort` button to complete the execution. If you did c
 
 For reference, the [console logs](https://gist.github.com/uaarkoti/2fe83745d361a261a387) for the execution of this workflow.
 
-If you are using Docker demo container, the URL's to access the application might be different. For ex: On my mac the URL might be something like `http://192.168.59.103:8080/staging` instead of `http://localhost:8080/staging`
+If you are using Docker demo container, the URL's to access the application might be different. For ex: On mac the URL might be something like `http://192.168.59.103:8080/staging` instead of `http://localhost:8080/staging`
 {: .notice}
 
 ### What can you do next?
