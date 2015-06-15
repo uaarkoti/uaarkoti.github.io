@@ -80,7 +80,7 @@ Here is a code snippet of the two lines of `$CATALINA_HOME/conf/server.xml` that
 - **Global libraries Repo** - Jenkins exposes a Git repository for hosting global libraries meant to be reused across multiple CD pipelines managed on the Master. We will setup this repository so you can build on it to create your own custom libraries. If this is a fresh Jenkins Install and you haven't setup this git repository, follow these instructions to setup.
 
 Before proceeding to the next steps, make sure your Jenkins instance is running
-{: .notice}
+{: .notice_important}
 
 
 {% highlight bash %}
@@ -125,7 +125,7 @@ Branch master set up to track remote branch master from origin.
 {% endhighlight %}
 
 In future, if you make any changes to the global libraries, simply commit and push them to the above git repository to be able to use them in your workflow.
-{: .notice}
+{: .notice_important}
 
 - **Import Job**
 
