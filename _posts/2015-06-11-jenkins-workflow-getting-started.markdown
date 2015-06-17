@@ -5,6 +5,7 @@ modified:
 categories:
 excerpt: "Building a sample end-to-end CD pipeline using Jenkins Workflow"
 tags: [Jenkins, Workflow, CD]
+comments: true
 image:
   feature:
 date: 2015-06-11T00:39:29-07:00
