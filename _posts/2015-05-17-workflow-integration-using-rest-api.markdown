@@ -120,8 +120,3 @@ To access the demo navigate to `http://<docker-host-ip>:8080` and build any of t
 As described above, Jenkins Workflow makes it very easy to integrate with external application by exposing workflow job itself as well as manual steps as RESTful endpoints.
 
 While we used `curl` command throughout this example, one should be able to use the same RESTful API's used by the `curl` command to achieve the same level of integration from any application.
-
-### What's Next?
-- Workflow + Webapp integration
-- Workflow + Checkpoints
-- Workflow + Docker

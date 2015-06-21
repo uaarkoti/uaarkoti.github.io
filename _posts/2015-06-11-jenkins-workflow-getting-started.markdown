@@ -198,4 +198,8 @@ Hopefully this gave you a good idea of how to create a Workflow and implement co
 
 Continuous Delivery is not an easy task but with Jenkins Workflow, you can manage the complexity through use a full blown object oriented programming language. Features like Global shared libraries will help centralize and abstract functionality hiding complexity from developers while encouraging code reuse and best practices.
 
+## What's Next?
+- Workflow + Docker
+- Workflow + Checkpoints
+
 [^1]: https://github.com/uaarkoti/jenkins-workflow-getting-started
