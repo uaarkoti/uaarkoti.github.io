@@ -44,4 +44,15 @@ We will try and answer all these questions through best practices below. So weth
 
 ## Best Practices
 
+1. Start with CJOC - If HA required, setup
+2. Monitoring and Analytics - Alerts, Analytics, Dashboards, Backups
+3. Setup RBAC
+4. Update center
+5. Templates
+6. Shared slaves - cleanup used slaves or make sure to label them if certain services are required. Use Docker when there are diverse needs
+7. Organize - Folders and views
+8. Workflow - Shared Libraries, Checkpoints, Workflow Templates
+9.
+10.
+
 [^1]: Disclaimer : I am an employee of CloudBees.
